@@ -1,13 +1,12 @@
 import 'jasmine-expect';
-import { combinations, hasSize,permutations,sort, } from 'src/combinations';
+import { combine, hasSize,permute,sort, } from 'src/combinations';
 
-console.log(combinations('abcd'));
-describe('combinations', () => {
-  describe('permutations', () => {
+describe('permute', () => {
+  describe('permute', () => {
     it('recursively combines a string and filters them by size exceeding 3  to prefix with it auto', () => {
-      expect(permutations('isolated')).toBeArray();
+      expect(permute('isolated')).toBeArray();
 
-      // expect(permutations('isolated').every(s => s.length > 3)).toBeTruthy();
+      // expect(permute('isolated').every(s => s.length > 3)).toBeTruthy();
     });
   });
   describe('sort', () => {
@@ -20,10 +19,10 @@ describe('combinations', () => {
       expect(hasSize(3)('oat')).toBeTruthy();
     });
   });
-  describe('combinations', () => {
-    it('deduplicates the permutations', () => {
+  describe('combine', () => {
+    it('deduplicates the permute', () => {
       // console.log(combinations('isolated'));
-      expect(combinations('isolated')).toBeArray();
+      expect(combine('isolated')).toBeArray();
 
       // expect(combinations('isolated').every(s => s.length > 3)).toBeTruthy();
     });
