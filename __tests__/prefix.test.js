@@ -1,5 +1,5 @@
 import 'jasmine-expect';
-import { prefix, prefixAll,split, } from 'src/prefix';
+import { prefix, prefixAll,prefixBin,prefixes, prefixMap,split, } from 'src/prefix';
 
 describe('utils', () => {
   describe('split', () => {
@@ -8,13 +8,29 @@ describe('utils', () => {
     });
   });
   describe('prefix', () => {
-    it('prefixenates two strings', () => {
+    it('cocatenates two strings', () => {
       expect(prefix('a')('b')).toEqual('ab');
+    });
+  }); describe('prefixBin', () => {
+    it('cocatenates two strings', () => {
+      expect(prefixBin('a','b')).toEqual('ba');
     });
   });
   describe('prefixAll', () => {
     it('splits a atring and prefixs each value ', () => {
       expect(prefixAll('abc')('b')).toBeArray();
+    });
+  });
+  describe('prefixMap', () => {
+    it('maps an array to a prefix', () => {
+      expect(prefixMap(split('abc'))('b')).toBeArray();
+    });
+  });
+  describe('prefixes', () => {
+    it('applies multiple prefixes to a string', () => {
+      console.log(prefixes('abc')('b','f','h'));
+
+      // expect(prefixes('abc')('b','f','h')).toBeArray();
     });
   });
 });
