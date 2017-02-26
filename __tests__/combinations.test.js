@@ -1,5 +1,5 @@
 import 'jasmine-expect';
-import { combinations, permutations,sort, } from 'src/combinations';
+import { combinations, hasSize,permutations,sort, } from 'src/combinations';
 
 console.log(combinations('abcd'));
 describe('combinations', () => {
@@ -13,6 +13,11 @@ describe('combinations', () => {
   describe('sort', () => {
     it('splits a string and joins the sorted elements', () => {
       expect(sort('dcba')).toEqual('abcd');
+    });
+  });
+  describe('hasSize', () => {
+    it('checks if the size of a string matchs a given length', () => {
+      expect(hasSize(3)('oat')).toBeTruthy();
     });
   });
   describe('combinations', () => {
