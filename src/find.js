@@ -9,6 +9,3 @@ export const find = string =>
      resolve(response);
    });
  });
-
-// console.log();
-find('bread').then(console.log);

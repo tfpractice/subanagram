@@ -57,7 +57,7 @@
     "anagramica": "^1.0.3"
   },
   "jest": {
-    "collectCoverage": "true",
+    "collectCoverage": true,
     "collectCoverageFrom": [
       "src/**"
     ],
