@@ -1,3 +1,5 @@
+// import { exceeds,split } from './utils';
+
 export const exceeds = min => str => str.length > min;
 
 export const isNot = a => b => b !== a;
