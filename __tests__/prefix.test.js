@@ -1,5 +1,5 @@
 import 'jasmine-expect';
-import { autoPrefix,combinations,exceeds, prefix, prefixAll, prefixBin, 
+import { autoPrefix,exceeds, prefix, prefixAll, prefixBin, 
   prefixes, prefixMap, prefixMapBin,split, } from 'src/prefix';
 
 describe('utils', () => {
@@ -36,9 +36,9 @@ describe('utils', () => {
     it('maps an array to multiple prefixes', () => {
       expect(prefixes([ 'abc','abc','abc', ])('b','f','h')).toBeArray();
     });
-    describe('combinations', () => {
+    describe('autoPrefix', () => {
       it('recursively combines a string to prefix with itauto', () => {
-        expect(combinations('isolated')).toBeArray();
+        expect(autoPrefix('isolated')).toBeArray();
       });
     });
   });

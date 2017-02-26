@@ -1,6 +1,6 @@
 export const exceeds = min => str => str.length > min;
-export const split = string => string.split('');
-export const prefix = str => p => str.concat(p);
+export const split = string => string.toLowerCase().split('');
+export const prefix = str => p => str.toLowerCase().concat(p.toLowerCase());
 export const prefixBin = (a,b) => prefix(b)(a);
 export const prefixMap = arr => p => [ ...arr, ].map(prefix(p));
 export const prefixAll = str => p => prefixMap(split(str))(p);
