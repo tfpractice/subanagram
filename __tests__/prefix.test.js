@@ -1,9 +1,6 @@
 import 'jasmine-expect';
-import { combinations,exceeds,prefix, prefixAll, prefixBin, prefixes, 
-  prefixMap, prefixMapBin, selfPrefix,split, } from 'src/prefix';
-import { find, } from 'src/find';
-
-find('braed').then(console.log);
+import { autoPrefix,combinations,exceeds, prefix, prefixAll, prefixBin, 
+  prefixes, prefixMap, prefixMapBin,split, } from 'src/prefix';
 
 describe('utils', () => {
   describe('split', () => {
@@ -40,7 +37,7 @@ describe('utils', () => {
       expect(prefixes([ 'abc','abc','abc', ])('b','f','h')).toBeArray();
     });
     describe('combinations', () => {
-      it('recursively combines a string to prefix with itself', () => {
+      it('recursively combines a string to prefix with itauto', () => {
         expect(combinations('isolated')).toBeArray();
       });
     });
