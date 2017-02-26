@@ -1,6 +1,6 @@
 import 'jasmine-expect';
-import { combinations,prefix,prefixAll, prefixBin, prefixes, prefixMap, 
-  prefixMapBin, selfPrefix, split, } from 'src/prefix';
+import { combinations,exceeds,prefix, prefixAll, prefixBin, prefixes, 
+  prefixMap, prefixMapBin, selfPrefix,split, } from 'src/prefix';
 import { find, } from 'src/find';
 
 find('braed').then(console.log);
@@ -41,8 +41,14 @@ describe('utils', () => {
     });
     describe('combinations', () => {
       it('recursively combines a string to prefix with itself', () => {
-        expect(combinations('bread')).toBeArray();
+        expect(combinations('isolated')).toBeArray();
       });
+    });
+  });
+  describe('exceeds', () => {
+    it('checks if the lenght of a string is greater than a min', () => {
+      expect(exceeds(4)('hello')).toBeTruthy(); 
+      expect(exceeds(4)('hell')).toBeFalsy(); 
     });
   });
 });

@@ -1,3 +1,4 @@
+export const exceeds = min => str => str.length > min;
 export const split = string => string.split('');
 export const prefix = str => p => str.concat(p);
 export const prefixBin = (a,b) => prefix(b)(a);
