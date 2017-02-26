@@ -1,5 +1,5 @@
 import 'jasmine-expect';
-import { combine, hasSize,permute,sort, } from 'src/combinations';
+import { combine,combineLen, hasSize,permLen,permute,sort, } from 'src/combinations';
 
 describe('permute', () => {
   describe('permute', () => {
@@ -23,6 +23,13 @@ describe('permute', () => {
     it('deduplicates the permute', () => {
       // console.log(combinations('isolated'));
       expect(combine('isolated')).toBeArray();
+
+      // expect(combinations('isolated').every(s => s.length > 3)).toBeTruthy();
+    });
+  });
+  describe('combineLen', () => {
+    it('deduplicates the permute', () => {
+      console.log(combineLen(4)('isolated')); expect(combineLen(4)('isolated')).toBeArray();
 
       // expect(combinations('isolated').every(s => s.length > 3)).toBeTruthy();
     });

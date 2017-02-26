@@ -1,5 +1,5 @@
 import 'jasmine-expect';
-import { autoPrefix,exceeds, prefix, prefixAll, prefixBin, 
+import { autoPrefix,exceeds,exPref, prefix, prefixAll, prefixBin, 
   prefixes, prefixMap, prefixMapBin,split, } from 'src/prefix';
 
 describe('utils', () => {
@@ -12,7 +12,14 @@ describe('utils', () => {
     it('cocatenates two strings', () => {
       expect(prefix('a')('b')).toEqual('ab');
     });
-  }); describe('prefixBin', () => {
+  });
+  describe('exPref', () => {
+    it('cocatenates two strings', () => {
+      console.log(exPref('b')('abbbcb'));
+      expect(exPref('a')('b')).toEqual('ab');
+    });
+  });
+  describe('prefixBin', () => {
     it('cocatenates two strings', () => {
       expect(prefixBin('a', 'b')).toEqual('ba');
     });
