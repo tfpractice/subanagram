@@ -1,12 +1,4 @@
-// import { exceeds,split } from './utils';
-
-export const exceeds = min => str => str.length > min;
-
-export const isNot = a => b => b !== a;
-
-export const split = str => str.toLowerCase().split('');
-
-export const exclude = x => str => split(str).filter(isNot(x)).join('');
+import { exceeds,exclude, isNot,split, } from './utils';
 
 export const prefix = p => str => p.toLowerCase().concat(str.toLowerCase());
 

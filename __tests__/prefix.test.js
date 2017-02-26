@@ -1,13 +1,9 @@
 import 'jasmine-expect';
-import { autoPrefix,exceeds,exPref, prefix, prefixAll, prefixBin, 
-  prefixes, prefixMap, prefixMapBin,split, } from 'src/prefix';
+import { autoPrefix, exPref, prefix, prefixAll, prefixBin, 
+  prefixes, prefixMap, prefixMapBin, } from 'src/prefix';
+import { split, } from 'src/utils';
 
 describe('utils', () => {
-  describe('split', () => {
-    it('splits a string into an array', () => {
-      expect(split('bread')).toBeArray();      
-    });
-  });
   describe('prefix', () => {
     it('cocatenates two strings', () => {
       expect(prefix('a')('b')).toEqual('ab');
@@ -15,7 +11,6 @@ describe('utils', () => {
   });
   describe('exPref', () => {
     it('cocatenates two strings', () => {
-      console.log(exPref('b')('abbbcb'));
       expect(exPref('a')('b')).toEqual('ab');
     });
   });
@@ -41,18 +36,13 @@ describe('utils', () => {
   });
   describe('prefixes', () => {
     it('maps an array to multiple prefixes', () => {
-      expect(prefixes([ 'abc','abc','abc', ])('b','f','h')).toBeArray();
+      expect(prefixes(['abc', 'abc', 'abc',])('b', 'f', 'h')).toBeArray();
     });
+    
     describe('autoPrefix', () => {
       it('recursively combines a string to prefix with itauto', () => {
         expect(autoPrefix('isolated')).toBeArray();
       });
-    });
-  });
-  describe('exceeds', () => {
-    it('checks if the lenght of a string is greater than a min', () => {
-      expect(exceeds(4)('hello')).toBeTruthy(); 
-      expect(exceeds(4)('hell')).toBeFalsy(); 
     });
   });
 });

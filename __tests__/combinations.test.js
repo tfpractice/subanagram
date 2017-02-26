@@ -1,5 +1,5 @@
 import 'jasmine-expect';
-import { combine,combineLen, hasSize,permLen,permute,sort, } from 'src/combinations';
+import { combine,combineLen,permLen,permute, } from 'src/combinations';
 
 describe('permute', () => {
   describe('permute', () => {
@@ -7,16 +7,7 @@ describe('permute', () => {
       expect(permute('isolated')).toBeArray();
     });
   });
-  describe('sort', () => {
-    it('splits a string and joins the sorted elements', () => {
-      expect(sort('dcba')).toEqual('abcd');
-    });
-  });
-  describe('hasSize', () => {
-    it('checks if the size of a string matchs a given length', () => {
-      expect(hasSize(3)('oat')).toBeTruthy();
-    });
-  });
+
   describe('combine', () => {
     it('deduplicates the permute', () => {
       expect(combine('isolated')).toBeArray();
