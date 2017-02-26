@@ -5,8 +5,6 @@ describe('permute', () => {
   describe('permute', () => {
     it('recursively combines a string and filters them by size exceeding 3  to prefix with it auto', () => {
       expect(permute('isolated')).toBeArray();
-
-      // expect(permute('isolated').every(s => s.length > 3)).toBeTruthy();
     });
   });
   describe('sort', () => {
@@ -21,17 +19,13 @@ describe('permute', () => {
   });
   describe('combine', () => {
     it('deduplicates the permute', () => {
-      // console.log(combinations('isolated'));
       expect(combine('isolated')).toBeArray();
-
-      // expect(combinations('isolated').every(s => s.length > 3)).toBeTruthy();
     });
   });
   describe('combineLen', () => {
     it('deduplicates the permute', () => {
-      console.log(combineLen(4)('isolated')); expect(combineLen(4)('isolated')).toBeArray();
-
-      // expect(combinations('isolated').every(s => s.length > 3)).toBeTruthy();
+      console.log(combineLen(5)('isolated'));
+      expect(combineLen(4)('isolated')).toBeArray();
     });
   });
 });
