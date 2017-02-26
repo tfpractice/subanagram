@@ -1,5 +1,9 @@
 import 'jasmine-expect';
-import { prefix, prefixAll, prefixBin, prefixes, prefixMap, prefixMapBin, split, } from 'src/prefix';
+import { combinations,prefix,prefixAll, prefixBin, prefixes, prefixMap, 
+  prefixMapBin, selfPrefix, split, } from 'src/prefix';
+import { find, } from 'src/find';
+
+find('braed').then(console.log);
 
 describe('utils', () => {
   describe('split', () => {
@@ -32,10 +36,13 @@ describe('utils', () => {
     });
   });
   describe('prefixes', () => {
-    it('applies multiple prefixes to a string', () => {
-      console.log(prefixes('abc')('b', 'f', 'h'));
-      
-      // expect(prefixes('abc')('b','f','h')).toBeArray();
+    it('maps an array to multiple prefixes', () => {
+      expect(prefixes([ 'abc','abc','abc', ])('b','f','h')).toBeArray();
+    });
+    describe('combinations', () => {
+      it('recursively combines a string to prefix with itself', () => {
+        expect(combinations('bread')).toBeArray();
+      });
     });
   });
 });
