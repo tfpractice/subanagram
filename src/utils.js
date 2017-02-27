@@ -12,4 +12,4 @@ export const exceeds = min => str => str.length > min;
 export const exclude = x => str => join(split(str).filter(isNot(x)));
 export const idx = chr => str => str.indexOf(chr);
 
-export const drop = c => str => has(c)(str) ? splice(idx(c)(str))(str) : str;
+export const drop = c => str => join(split(str).filter((e,i) => i !== idx(c)(str)));

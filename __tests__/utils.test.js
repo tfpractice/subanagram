@@ -1,5 +1,5 @@
 import 'jasmine-expect';
-import { equiv,exceeds, exclude,hasSize, isNot, sort,split, } from 'src/utils';
+import { drop,equiv, exceeds,exclude, hasSize, isNot,sort, split, } from 'src/utils';
 
 describe('utils', () => {
   describe('split', () => {
@@ -32,6 +32,13 @@ describe('utils', () => {
   describe('hasSize', () => {
     it('checks if the size of a string matchs a given length', () => {
       expect(hasSize(3)('oat')).toBeTruthy();
+    });
+  });
+  describe('drop', () => {
+    it('returns a string with a character removed', () => {
+      console.log((drop('b')('abchccbhb')));
+
+      expect(drop('c')('abc')).toEqual('ab');
     });
   });
 });

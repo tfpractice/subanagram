@@ -31,14 +31,13 @@ describe('utils', () => {
   });
   describe('prefixMapBin', () => {
     it('maps an array to a prefix', () => {
-      expect(prefixMapBin(split('abc'), 'b')).toBeArray();
+      expect(prefixMapBin(split('abchccbhb'), 'b')).toBeArray();
     });
   });
   describe('prefixes', () => {
     it('maps an array to multiple prefixes', () => {
-      expect(prefixes(['abc', 'abc', 'abc',])('b', 'f', 'h')).toBeArray();
+      expect(prefixes([ 'abc', 'abc', 'abc', ])('b', 'f', 'h')).toBeArray();
     });
-    
     describe('autoPrefix', () => {
       it('recursively combines a string to prefix with itauto', () => {
         expect(autoPrefix('isolated')).toBeArray();
