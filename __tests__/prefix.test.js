@@ -1,10 +1,13 @@
 import 'jasmine-expect';
 import { split, } from 'src/utils';
-import { autoPrefix, exPref, prefix, prefixAll, prefixBin, prefixes, prefixMap,
-   prefixMapBin, } from 'src/prefix';
+import { autoPrefix, exPref,prefAllBin,prefix,
+prefixAll, prefixBin, prefixes, prefixMap, prefixMapBin, prefStr, } from 'src/prefix';
 
+// ,prefAllBin
 describe('utils', () => {
   describe('prefix', () => {
+    console.log(prefAllBin('abd', 'c'));
+    console.log(prefStr('abcb')(...(new Set(...(split('abcb'))))));
     it('cocatenates two strings', () => {
       expect(prefix('a')('b')).toEqual('ab');
     });

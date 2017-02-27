@@ -4,6 +4,8 @@ import { drop,equiv, exceeds,exclude, hasSize, isNot,sort, split, } from 'src/ut
 describe('utils', () => {
   describe('split', () => {
     it('splits a string into an array', () => {
+      console.log(split('bread'), split('br, e, ad'));
+    
       expect(split('bread')).toBeArray();      
     });
   });
