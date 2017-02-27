@@ -13,8 +13,8 @@ export default {
       { dest: 'dist/bundle.cjs.js', format: 'cjs', },
       { dest: 'dist/bundle.umd.js', format: 'umd', },
   ],
-  moduleId: 'anagramica',
-  moduleName: 'anagramica',
+  moduleId: 'subanagram',
+  moduleName: 'subanagram',
   sourceMap: true,
   exports: 'named',
   plugins: [

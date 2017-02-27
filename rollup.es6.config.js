@@ -9,8 +9,8 @@ export default {
     entry: 'src/index.js',
     dest: 'dist/bundle.es6.js',
     format: 'es',
-    moduleId: 'anagramica',
-    moduleName: 'anagramica',
+    moduleId: 'subanagram',
+    moduleName: 'subanagram',
     sourceMap: true,
     plugins: [
       nodeResolve({ skip: [ 'anagramica', ], }),

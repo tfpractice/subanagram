@@ -1,7 +1,7 @@
 import 'jasmine-expect';
-import { autoPrefix, exPref, prefix, prefixAll, prefixBin, 
-  prefixes, prefixMap, prefixMapBin, } from 'src/prefix';
 import { split, } from 'src/utils';
+import { autoPrefix, exPref, prefix, prefixAll, prefixBin, prefixes, prefixMap,
+   prefixMapBin, } from 'src/prefix';
 
 describe('utils', () => {
   describe('prefix', () => {

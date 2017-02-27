@@ -8,6 +8,6 @@ describe('find', () => {
 });
 describe('findByLen', () => {
   it('finds len letter anagrams from a set of charactes', () => {
-    // findByLen(3)('braed').then(all => expect(all).toBeArray());
+    findByLen(3)('braed').then(all => expect(all).toBeArray());
   });
 });

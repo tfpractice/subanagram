@@ -36,8 +36,6 @@ describe('utils', () => {
   });
   describe('drop', () => {
     it('returns a string with a character removed', () => {
-      console.log((drop('b')('abchccbhb')));
-
       expect(drop('c')('abc')).toEqual('ab');
     });
   });
