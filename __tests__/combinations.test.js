@@ -15,6 +15,7 @@ describe('permute', () => {
   });
   describe('combineLen', () => {
     it('deduplicates the permute', () => {
+      console.log(combineLen(4)('isolased').sort().reverse());
       expect(combineLen(4)('isolated')).toBeArray();
     });
   });
