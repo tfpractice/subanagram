@@ -1,5 +1,6 @@
 import 'jasmine-expect';
-import { chars,drop, equiv,exceeds,exclude, hasSize, isNot,sort, split, } from 'src/utils';
+import { allFreq,catBin,chars, drop, equiv, exceeds, exclude,
+   fMap, freq,genRep,hasSize, isNot, sort, splat, splatBin, split, strSet, } from 'src/utils';
 
 describe('utils', () => {
   describe('split', () => {
@@ -41,8 +42,35 @@ describe('utils', () => {
   });
   describe('chars', () => {
     it('returns the characters in a string', () => {
-      console.log(chars('a,b,c,d,ab, aa'));
-      expect(chars('a,b,c,d,ab, aa')).toEqual([ 'a','b','c','d', ]);
+      expect(chars('a,b,c,d,ab, aa')).toEqual([ 'a', 'b', 'c', 'd', ]);
+    });
+  });
+  describe('freq', () => {
+    it('creates a string of each character repeated ', () => {
+      expect(freq('abbc')('b')).toBeNumber();
+    });
+  });
+  describe('fMap', () => {
+    it('returns a string of each character mapped to the freq function', () => {
+      expect(fMap('abccbcd')).toEqual('abbcccd');
+    });
+  });
+  describe('strSet', () => {
+    it('returns a set of the split string', () => {
+      expect(strSet('abbcdcc')).toBe('a,b,c,d');
+    });
+  });
+  
+  describe('splat', () => {
+    it('splits and concats two strings', () => {
+      console.log('chars',chars('a,b,c,d,ab, aa'));
+      console.log('freq',freq('abbc')('b'));
+      console.log('strSet',strSet('abbcdcc'));
+      console.log('allFreq',(allFreq('abbcdcc')));
+      console.log('splatBin',splatBin('a,b,c,b','a'));
+      console.log('catBin',catBin('a,b,c,b','a'));
+      console.log('genRep',genRep('ab',3));
+      expect(splat('abc')('d,dd')).toEqual('a,b,c,d,dd');
     });
   });
 });

@@ -3,10 +3,9 @@ import { split, } from 'src/utils';
 import { autoPrefix, exPref,prefAllBin,prefix,
 prefixAll, prefixBin, prefixes,prefixMap, prefixMapBin, prefStr, selfPerm, } from 'src/prefix';
 
-// ,prefAllBin
 describe('utils', () => {
   describe('prefix', () => {
-    console.log(selfPerm('abbdccdb'));
+    // console.log(selfPerm('abbcd'));
     it('cocatenates two strings', () => {
       expect(prefix('a')('b')).toEqual('ab');
     });
