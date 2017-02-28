@@ -1,11 +1,9 @@
 import 'jasmine-expect';
-import { drop,equiv, exceeds,exclude, hasSize, isNot,sort, split, } from 'src/utils';
+import { chars,drop, equiv,exceeds,exclude, hasSize, isNot,sort, split, } from 'src/utils';
 
 describe('utils', () => {
   describe('split', () => {
     it('splits a string into an array', () => {
-      console.log(split('bread'), split('br, e, ad'));
-    
       expect(split('bread')).toBeArray();      
     });
   });
@@ -39,6 +37,12 @@ describe('utils', () => {
   describe('drop', () => {
     it('returns a string with a character removed', () => {
       expect(drop('c')('abc')).toEqual('ab');
+    });
+  });
+  describe('chars', () => {
+    it('returns the characters in a string', () => {
+      console.log(chars('a,b,c,d,ab, aa'));
+      expect(chars('a,b,c,d,ab, aa')).toEqual([ 'a','b','c','d', ]);
     });
   });
 });
