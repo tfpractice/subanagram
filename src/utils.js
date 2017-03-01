@@ -1,4 +1,4 @@
-``export const equiv = a => b => b === a;
+export const equiv = a => b => b === a;
 export const isNot = a => b => b !== a;
 
 export const hasSize = len => str => str.length === len;

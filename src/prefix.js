@@ -1,4 +1,4 @@
-import { drop, split,splort, } from './utils';
+import { drop, sort,split, } from './utils';
 
 export const prefix = p => chr => p.toLowerCase().concat(chr.toLowerCase());
 
@@ -27,5 +27,5 @@ export const prefAllBin = (str , p) => {
 
 export const prefixes = arr => (...prefs) => prefs.reduce(prefixMapBin, arr);
 export const prefStr = str => (...prefs) => prefs.reduce(prefAllBin, str);
-export const selfPerm = str => prefStr(str)(...splort(str));
+export const selfPerm = str => prefStr(str)(...sort(str));
 export const autoPrefix = str => prefixes(split(str))(...split(str));
