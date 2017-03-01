@@ -3,8 +3,8 @@ export const isNot = a => b => b !== a;
 
 export const hasSize = len => str => str.length === len;
 export const exceeds = min => str => str.length > min;
-export const lower = str => str.toLowerCase();
 
+export const lower = str => str.toLowerCase();
 export const hasComma = str => new Set(str.split('')).has(',');
 
 export const join = arr => arr.join('');
@@ -14,7 +14,7 @@ export const splAlph = str => lower(str).split(/[^0-9a-z?]+/);
 export const splEach = str => lower(str).split('');
 export const split = str => hasComma(str) ? splAlph(str) : splEach(str);
 
-export const splice = id => str => join(split(str).splice(id, 1));
+// export const splice = id => str => join(split(str).splice(id, 1));
 export const exclude = x => str => join(split(str).filter(isNot(x)));
 
 // export const sort = str => join(split(str).sort());
