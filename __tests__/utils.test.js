@@ -1,6 +1,6 @@
 import 'jasmine-expect';
-import { allFreq,catBin,chars, drop, equiv, exceeds, exclude,
-   fMap, freq,genRep,hasSize, isNot, sort, splat, splatBin, split, strSet, } from 'src/utils';
+import { allFreq,catBin,chars,drop, equiv, exceeds, exclude, fMap,
+   freq, hasSize,isNot,repeat, sort, splat, splatBin, split, strSet, } from 'src/utils';
 
 describe('utils', () => {
   describe('split', () => {
@@ -71,8 +71,12 @@ describe('utils', () => {
       console.log('allFreq',(allFreq('abbcdcc')));
       console.log('splatBin',splatBin('a,b,c,b','a'));
       console.log('catBin',catBin('a,b,c,b','a'));
-      console.log('genRep',genRep('ab',3));
+
+      // console.log('repeat',repeat('ab',3));
+
       console.log('splat',splat('abc')('d,dd'));
+      console.log([ ...'ia,ma,spli,tstring', ]);
+      console.log('repeats',repeat(3)('rp'));
 
       // expect(splat('abc')('d,dd')).toEqual('a,b,c,d,dd');
     });

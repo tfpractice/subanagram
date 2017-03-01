@@ -1,9 +1,10 @@
-import { chars,drop, exceeds,exclude,isNot,join,sort,split,splort, } from './utils';
+import { drop, split,splort, } from './utils';
 
 export const prefix = p => chr => p.toLowerCase().concat(chr.toLowerCase());
 
 export const exPref = p => chr => prefix(p)(drop(p)(chr));
-export const limPref = lim => p => chr => prefix(p)(drop(p)(chr));
+
+// export const limPref = lim => p => chr => prefix(p)(drop(p)(chr));
 
 export const prefixBin = (a,b) => prefix(b)(a);
 
