@@ -5,13 +5,13 @@ export const hasSize = len => str => str.length === len;
 export const exceeds = min => str => str.length > min;
 
 export const join = arr => arr.join('');
+export const cJoin = arr => arr.join();
 export const lower = str => str.toLowerCase();
 
 export const hasComma = str => new Set(str.split('')).has(',');
-export const alphaSplit = str => lower(str).split(/[^0-9a-z?]+/);
-
+export const splAlph = str => lower(str).split(/[^0-9a-z?]+/);
 export const splEach = str => lower(str).split('');
-export const split = str => hasComma(str) ? alphaSplit(str) : splEach(str);
+export const split = str => hasComma(str) ? splAlph(str) : splEach(str);
 export const sort = str => join(split(str).sort());
 export const splort = str => split(sort(str));
 export const strSet = str => [ ...new Set(split(str)), ].join();
