@@ -2,7 +2,7 @@ import 'jasmine-expect';
 import { allFreq,catBin,chars,drop, equiv, exceeds, exclude, fMap,
    freq, hasSize,isNot,repeat, sort, splat, splatBin, split, strSet, } from 'src/utils';
 
-describe('utils', () => {
+xdescribe('utils', () => {
   describe('split', () => {
     it('splits a string into an array', () => {
       expect(split('bread')).toBeArray();      

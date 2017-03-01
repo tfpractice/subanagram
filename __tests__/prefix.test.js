@@ -5,7 +5,7 @@ prefixAll, prefixBin, prefixes,prefixMap, prefixMapBin, prefStr, selfPerm, } fro
 
 describe('utils', () => {
   describe('prefix', () => {
-    console.log(selfPerm('abbcd'));
+    // console.log(selfPerm('abbcd'));
     it('cocatenates two strings', () => {
       expect(prefix('a')('b')).toEqual('ab');
     });
