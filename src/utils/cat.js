@@ -20,33 +20,18 @@
   export const crossCat = s0 => (s1) => {
     console.log('s0',s0);
     console.log('s1',s1);
+    console.log('cross',cross(s0)(s1));
+    console.log('crossMany',crossMany(s0)(s1));
 
-    // console.log(freqStr(s1));
-
-    // console.log(cross(s0)(freqStr(s1)));
-
-    // console.log(splat(s0)(cross(s0)(s1)));
-
-    // console.log(chars(cat(s0)(s1))(cross(s0)(s1));
-
-    // console.log('crossMany',crossMany(s0)(...split(cross(s0)(s1))));
-
-    // console.log((split(cross(s0)(s1)).reduce(crossBin, s0)));
-    // return chars(cross(s0)(s1)).concat(...split(cross(s0)(s1))).join();
-    console.log((cross(s0)(s1).concat(split(crossMany(s0)(s1)))));
+    // console.log('split',split(crossMany(s0)(s1)));
+    console.log('return',cross(s0)(s1).concat((crossMany(s0)(s1))));
+    return (cross(s0)(s1).concat(split(crossMany(s0)(s1))));
     return strSet(joinC(chars(cross(s0)(s1)))(cross(s0)(s1).concat(crossMany(s0)(s1))));
-
-    // console.log(cross(s0)(freqStr(s1)));
-    // console.log(cross(split(s1).reduce(crossBin, s0)));
-
-    // console.log('crossMany',crossMany(s0)((cross(s0)(s1))));
-
-    // console.log(chars(cross(s0)(s1)).map(splatBin, (cross(s0)(s1))));
     return [ ...split(s0), ...split(s1), ...split(cross(s0)(s1)), ].join();
   };
   
   export const crossCatBin = (s0 ,s1) => {
     console.log('crossCatBin',crossCat(s0)(s1));
-    return crossCat(s0)(s1).join();
+    return crossCat(s0)(s1);
   };
   export const crossCatAll = s0 => (...strs) => strs.reduce(crossCatBin, s0);

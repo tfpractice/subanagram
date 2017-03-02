@@ -34,11 +34,13 @@ describe('cat', () => {
   });
   describe('cross', () => {
     it('combines two strings', () => {
-      // console.log(allSplat('abc')('x,yz'.split('')));
+      console.log(allSplat('abc')('x,yz'.split('')));
       console.log('cross',cross('abc')('xyz'));
       console.log('crossBin', crossBin('abc', 'xyz'));
       console.log('crossCat',crossCat('abc')('xyz'));
-      console.log('crossCatAll',crossCatAll('a,b,c')('x,y,z,xy, xyz'));
+      console.log('crossCatAll',crossCatAll('abc')('xyz'));
+
+      // console.log('crossCatAll',crossCatAll('a,b,c')('x,y,z,xy, xyz'));
     });
   });
 });
