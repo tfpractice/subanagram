@@ -16,5 +16,9 @@ describe('cat', () => {
     it('splits a string and concatenates each of its elements', () => {
       expect(splat('a,b')('x')).toEqual('xa, xb');
     });
+  }); describe('splatBin', () => {
+    it('splits a string and concatenates each of its elements', () => {
+      expect(splatBin('a,b','x')).toEqual('xa, xb');
+    });
   });
 });
