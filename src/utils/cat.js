@@ -1,4 +1,4 @@
-  import { alpha, alphStr, chars,exceeds,jnAlpha,jnSet,join,split,strSet, uniq, } from './index';
+  import { alpha, alphStr, chars,charSet,exceeds,jnAlpha,jnSet,join,split,strSet, uniq, } from './index';
   import { freqStr, } from './frequency';
   
   export const repeat = times => str => str.repeat(times);
@@ -25,14 +25,39 @@
   export const cross = s0 => s1 => split(s0).map(splat(s1)).reduce(addSetBin, s0);
   export const crossBin = (s0, s1) => cross(s0)(s1);
   export const crossMany = s0 => (...strs) => strs.reduce(crossBin, s0);
-  
-  export const crossCat = s0 => (s1) => {
-    const cRes = split((s1)).reduce(crossBin,s0);
-    const myCross = cross(s0)(s1);
+  const dedupeC = c => str => (str.replace(RegExp(`${c}+`,'g'),c));
+  const dedupeBin = (str,c) => {
+    // console.log('DEDUPING',str,c);
+    const f = 0;
 
+    // console.log('DEDUPING',dedupeC(c)(str));
+
+    // console.log((cross(str)(str)));
+    return dedupeC(c)(str); 
+  };
+  const dedupe = str => charSet(str).reduce(dedupeBin, str);
+  const dedupeAll = str => split(str).map(dedupe).reduce(addSetBin, str);
+
+  export const autoCross = str => charSet(str).reduce(dedupeBin,cross(str)(str));
+  export const crossCat = s0 => (s1) => {
+    const cRes = split((s0)).reduce(crossBin,splat(s0)(s1));
+    const mSplat = splat(s0)(s1);
+    const myCross = cross(s0)(s1);
+    const a0 = autoCross(s0);
+    const a1 = autoCross(s1);
+
+    console.log('dedupe',dedupeAll(cRes));
+
+    // const cRes = (splat(s0)(myCross));
+
+    console.log('addCoss',addSet(s0)(cross(s0)(s1)));
+    console.log('a0', a0);
+    console.log('a1', a1);
     console.log('s0',s0);
     console.log('s1',s1);
-    console.log('myCross',split(myCross));
+
+    // console.log('myCross',(myCross));
+    // console.log(mSplat);
 
     // console.log(split(myCross).reduce(splatBin, s0));
 
@@ -43,8 +68,8 @@
     // console.log('crossMany',crossMany(s0)(...split(s1)));
 
     // console.log('cross&SPLa',splat(s0)(cross(s0)(s1)));
-
-    // return cRes;
+    // return dedupe(addSet(s0)(myCross));
+    return dedupeAll(cRes);
 
     // console.log();
     // return splat(s0)(cross(s0)(s1));
@@ -54,7 +79,10 @@
   };
   
   export const crossCatBin = (s0 ,s1) => {
-    console.log('crossCatBin',crossCat(s0)(s1));
+    const ccb = 0;
+
+    // console.log('crossCatBin',crossCat(s0)(s1));
+
     return crossCat(s0)(s1);
   };
   export const crossCatAll = s0 => (...strs) => strs.reduce(crossCatBin, s0);

@@ -34,9 +34,12 @@ describe('cat', () => {
   });
   describe('cross', () => {
     it('combines two strings', () => {
-      console.log('allSplat',allSplat('abc')('xyz'));
-      console.log('cross',cross('abc')('xyz'));
-      console.log('crossBin', crossBin('abc', 'xyz'));
+      // console.log('allSplat',allSplat('abc')('xyz'));
+      console.log('aa,b,cd,d,aa,ba'.replace(/a/, '_'));
+      console.log('alllb'.replace(/(l*)/, 'l'));
+
+      // console.log('cross',cross('abc')('xyz'));
+      // console.log('crossBin', crossBin('abc', 'xyz'));
       console.log('crossCat',crossCat('abc')('xyz'));
       console.log('crossCatAll',crossCatAll('abc')('xyz'));
 
