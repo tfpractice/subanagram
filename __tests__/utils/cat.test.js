@@ -34,7 +34,7 @@ describe('cat', () => {
   });
   describe('cross', () => {
     it('combines two strings', () => {
-      console.log(allSplat('abc')('x,yz'.split('')));
+      console.log('allSplat',allSplat('abc')('xyz'));
       console.log('cross',cross('abc')('xyz'));
       console.log('crossBin', crossBin('abc', 'xyz'));
       console.log('crossCat',crossCat('abc')('xyz'));
