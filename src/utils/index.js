@@ -4,6 +4,7 @@ export * from './join';
 export * from './replace';
 export * from './size';
 export * from './split';
+export * from './cat';
 
 export const equiv = a => b => b === a;
 export const isNot = a => b => b !== a;

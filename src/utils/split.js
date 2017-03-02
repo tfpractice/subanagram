@@ -11,5 +11,7 @@ export const chars = str => alphStr(str).split('');
 export const charSet = str => [ ...new Set(chars(str)), ];
 
 export const split = str => comma(str) ? alpha(str) : chars(str);
+export const strSet = str => [ ...new Set(split(str)), ];
 
+// export const alphSet
 // export const exclude = chr => str => split(str).filter(xEq(chr)).join();
