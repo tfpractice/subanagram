@@ -14,11 +14,8 @@ export const splAlph = str => lower(str).split(/[^0-9a-z?]+/);
 export const splEach = str => lower(str).split('');
 export const split = str => hasComma(str) ? splAlph(str) : splEach(str);
 
-// export const splice = id => str => join(split(str).splice(id, 1));
 export const exclude = x => str => join(split(str).filter(isNot(x)));
 
-// export const sort = str => join(split(str).sort());
-// export const splort = str => split(sort(str));
 export const sort = str => split(str).sort();
 
 export const chars = str => [ ...new Set(split(join(split(str)))), ];

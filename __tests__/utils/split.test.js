@@ -7,25 +7,28 @@ const myStr = 'abc';
 describe('split', () => {
   describe('alpha', () => {
     it('returns an array of a strings alphaNumeric characters', () => {
-      console.log(alpha(myAlp));
       expect(alpha(myAlp)).toEqual([ 'a','bb','c', ]);
     });
   });
   describe('alphStr', () => {
     it('drops all nonAlpha characters from a stirng', () => {
-      console.log(alphStr(myAlp));
+      expect(alphStr(myAlp)).toEqual('abbc');
     });
   });
   describe('chars', () => {
     it('returns an array of single character strings', () => {
-      console.log(chars(myAlp));
       expect(chars(myAlp)).toEqual([ 'a','b','b','c', ]);
     });
   });
   describe('charSet', () => {
     it('returns an array of the strings characters', () => {
-      console.log(charSet(myAlp));
-      expect(charSet(myAlp)).toEqual(myStr);
+      expect(charSet(myAlp)).toEqual(chars(myStr));
+    });
+  });
+  describe('split', () => {
+    it('splits a string to its consituent values', () => {
+      expect(split(myAlp)).toEqual([ 'a','bb','c', ]);
+      expect(split(myStr)).toEqual([ 'a','b','c', ]);
     });
   });
 });
