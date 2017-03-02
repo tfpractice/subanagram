@@ -1,6 +1,6 @@
 import 'jasmine-expect';
 import { allFreq,catBin,chars,drop, equiv, exceeds, exclude, fMap,
-   freq, hasSize,isNot,repeat, sort, splat, splatBin, split, strSet, } from 'src/utils';
+   freq, hasSize,isNot,repeat, sort, splat, splatBin, split, strSet, } from 'src/utilsx';
 
 xdescribe('utils', () => {
   describe('split', () => {

@@ -1,22 +1,9 @@
-// export const equiv = a => b => b === a;
-// export const isNot = a => b => b !== a;
-// 
-// export const hasSize = len => str => str.length === len;
-// export const exceeds = min => str => str.length > min;
-// 
-// export const lower = str => str.toLowerCase();
-// export const hasComma = str => new Set(str.split('')).has(',');
-// 
-// export const join = arr => arr.join('');
-// export const cJoin = arr => arr.join();
-// 
-// export const splAlph = str => lower(str).split(/[^0-9a-z?]+/);
-// export const splEach = str => lower(str).split('');
-// export const split = str => hasComma(str) ? splAlph(str) : splEach(str);
-// 
+import { join, split, } from './utils';
+
 // export const exclude = x => str => join(split(str).filter(isNot(x)));
-// 
-// export const sort = str => split(str).sort();
+
+export const sort = str => split(str).sort();
+
 // 
 // export const chars = str => [ ...new Set(split(join(split(str)))), ];
 // export const splSet = str => [ ...new Set(split(str)), ];

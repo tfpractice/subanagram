@@ -12,4 +12,4 @@ export const charSet = str => [ ...new Set(chars(str)), ];
 
 export const split = str => comma(str) ? alpha(str) : chars(str);
 
-export const exclude = chr => str => split(str).filter(xEq(chr)).join();
+// export const exclude = chr => str => split(str).filter(xEq(chr)).join();

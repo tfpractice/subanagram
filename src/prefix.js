@@ -1,4 +1,4 @@
-import { drop, sort,split, } from './utils';
+import { drop, sort,split, } from './utilsx';
 
 export const prefix = p => chr => p.toLowerCase().concat(chr.toLowerCase());
 

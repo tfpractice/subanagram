@@ -1,5 +1,5 @@
 import { autoPrefix, } from './prefix';
-import { exceeds, hasSize, sort, } from './utils';
+import { exceeds, hasSize, sort, } from './utilsx';
 
 export const permute = str => autoPrefix(str);
 export const permLen = len => str => permute(str).filter(hasSize(len));

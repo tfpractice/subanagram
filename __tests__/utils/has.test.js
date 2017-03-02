@@ -1,7 +1,8 @@
 import 'jasmine-expect';
 import { comma, has, idx, xHas, } from 'src/utils/has';
-console.log('ab,cf,dd,s,e,r'.replace(/\W/g,'_'));
-console.log('ab,cf,dd,s,d,d,e,r'.replace(/d+/g,'_'));
+
+// console.log('ab,cf,dd,s,e,r'.replace(/\W/g,'_'));
+// console.log('ab,cf,dd,s,d,d,e,r'.replace(/d+/g,'_'));
 describe('has', () => {
   describe('has', () => {
     it('checks for equality of two primitives', () => {
