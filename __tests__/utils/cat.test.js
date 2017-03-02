@@ -1,5 +1,5 @@
 import 'jasmine-expect';
-import { cat, catBin, repeat, reps,splat, splatBin, } from 'src/utils/cat';
+import { allSplat, cat, catBin,cross,crossBin,crossCat, crossCatAll,repeat, reps, splat,splatBin, } from 'src/utils/cat';
 
 describe('cat', () => {
   describe('cat', () => {
@@ -30,6 +30,15 @@ describe('cat', () => {
   describe('reps', () => {
     it('generates an array if orogressive repetitions', () => {
       expect(reps(3)('ab')).toEqual('ab,abab,ababab');      
+    });
+  });
+  describe('cross', () => {
+    it('combines two strings', () => {
+      // console.log(allSplat('abc')('x,yz'.split('')));
+      console.log('cross',cross('abc')('xyz'));
+      console.log('crossBin', crossBin('abc', 'xyz'));
+      console.log('crossCat',crossCat('abc')('xyz'));
+      console.log('crossCatAll',crossCatAll('a,b,c')('x,y,z,xy, xyz'));
     });
   });
 });

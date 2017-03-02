@@ -2,12 +2,6 @@ import { join, split, } from './utils';
 
 // export const exclude = x => str => join(split(str).filter(isNot(x)));
 
-export const sort = str => split(str).sort();
-
-// 
-// export const chars = str => [ ...new Set(split(join(split(str)))), ];
-// export const splSet = str => [ ...new Set(split(str)), ];
-// export const strSet = str => cJoin(splSet(str));
 // 
 // export const cat = c0 => c1 => c0.concat(c1);
 // export const catBin = (c0, c1) => cat(c0)(c1);
