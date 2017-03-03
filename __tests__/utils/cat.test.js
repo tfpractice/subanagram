@@ -35,7 +35,7 @@ describe('cat', () => {
   describe('cross', () => {
     it('combines two strings', () => {
       // console.log('allSplat',allSplat('abc')('xyz'));
-      console.log('aa,b,cd,d,aa,ba'.replace(/a/, '_'));
+      // console.log('aa,b,cd,d,aa,ba'.replace(/a/, '_'));
       console.log('alllb'.replace(/(l*)/, 'l'));
 
       console.log('cross',cross('abc')('xyz'));

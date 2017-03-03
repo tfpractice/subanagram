@@ -1,5 +1,5 @@
 import { alpha, chars, sortSet,split, uniq, } from './split';
-import { sort, } from 'module';
+import { sort, } from './split';
 
 export const flatJoin = arr => arr.join('');
 

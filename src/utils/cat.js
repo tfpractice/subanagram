@@ -33,7 +33,7 @@
   
   export const autoSplat = str => add(str)(str);
 
-  export const splat = str => c => split(str).map(cat(c)).reduce(addSetBin, add(str)(c));
+  export const splat = str => c => split(str).map(cat(c)).reduce(addSetBin, autoSplat(cat(c)(str)));
   export const splatBin = (str ,chr) => splat(str)(chr);
   export const allSplat = str => (...chrs) => chrs.reduce(splatBin, str);
   
