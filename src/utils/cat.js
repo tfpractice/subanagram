@@ -16,7 +16,7 @@
   export const addSetBin = (x, y) => addSet(x)(y);
 
   export const append = x => y => join([ x, y, ]);
-  export const appendBin = x => y => append(x)(y);
+  export const appendBin = (x,y) => append(x)(y);
   
   const dedupeC = c => str => (str.replace(RegExp(`${c}+`,'g'),c));
   const dedupeBin = (str,c) => {
