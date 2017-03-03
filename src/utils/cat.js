@@ -9,7 +9,7 @@
   export const cat = c0 => c1 => c0.concat(c1);
   export const catBin = (c0, c1) => cat(c0)(c1);
   
-  export const add = x => y => join([ split(x),y, ]);
+  export const add = x => y => join([ split(x),split(y), ]);
   export const addBin = (x, y) => add(x)(y);
   
   export const addSet = x => y => jnSet(add(x)(y));

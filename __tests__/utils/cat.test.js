@@ -1,12 +1,12 @@
 import 'jasmine-expect';
-import { add,addBin,addSet,addSetBin,append,appendBin,cat,catBin, } from 'src/utils/cat';
+import { add, addBin, addSet, addSetBin, append, appendBin, cat, catBin, } from 'src/utils/cat';
 
 const ab = 'ab';
 const abc = 'abc'; 
 const xy = 'xy';
 const xyz = 'xyz'; 
 
-fdescribe('cat', () => {
+describe('cat', () => {
   describe('cat', () => {
     it('concatenates a str with another', () => {
       expect(cat('a')('b')).toEqual('ab');
@@ -14,27 +14,27 @@ fdescribe('cat', () => {
   });
   describe('catBin', () => {
     it('concatenates a str with another', () => {
-      expect(catBin('a','b')).toEqual('ab');
+      expect(catBin('a', 'b')).toEqual('ab');
     });
   });
   describe('add', () => {
-    it('splits a string and then appends another string', () => {
-      expect(add(ab)(xy)).toEqual('a,b,xy');
+    it('splits a string and then appends a split version of another string', () => {
+      expect(add(ab)(xy)).toEqual('a,b,x,y');
     });
   });
   describe('addBin', () => {
-    it('splits a string and then appends another string', () => {
-      expect(addBin(ab,xy)).toEqual('a,b,xy');
+    it('splits a string and then appends a split version of another string', () => {
+      expect(addBin(ab, xy)).toEqual('a,b,x,y');
     });
   });
   describe('addSet', () => {
     it('adds a unidque string to a string', () => {
-      expect(addSet(ab)(xy)).toEqual('a,b,xy');
+      expect(addSet(ab)(xy)).toEqual('a,b,x,y');
     });
   });
   describe('addSet', () => {
     it('adds a unidque string to a string', () => {
-      expect(addSetBin(ab,xy)).toEqual('a,b,xy');
+      expect(addSetBin(ab, xy)).toEqual('a,b,x,y');
     });
   });
   describe('append', () => {
@@ -44,10 +44,10 @@ fdescribe('cat', () => {
   });  
   describe('append', () => {
     it('appends a string to another without splitting', () => {
-      expect(appendBin(ab,xy)).toEqual('ab,xy');
+      expect(appendBin(ab, xy)).toEqual('ab,xy');
     });
   });
-
+  
   // describe('splat', () => {
   //   it('splits a string and concatenates each of its elements', () => {
   //     expect(splat('a,b')('x')).toEqual('xa,xb');

@@ -1,5 +1,4 @@
-import { alpha, chars, sortSet,split, uniq, } from './split';
-import { sort, } from './split';
+import { alpha, chars, sort,sortSet, split,uniq, } from './split';
 
 export const flatJoin = arr => arr.join('');
 
