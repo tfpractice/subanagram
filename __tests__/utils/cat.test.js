@@ -1,5 +1,5 @@
 import 'jasmine-expect';
-import { allSplat, cat, catBin,cross,crossBin,crossCat, crossCatAll,repeat, reps, splat,splatBin, } from 'src/utils/cat';
+import { allSplat, cat,catBin, cross,cross2,crossBin,crossCat, crossCatAll,repeat, reps, splat,splatBin, } from 'src/utils/cat';
 
 describe('cat', () => {
   describe('cat', () => {
@@ -38,10 +38,13 @@ describe('cat', () => {
       console.log('aa,b,cd,d,aa,ba'.replace(/a/, '_'));
       console.log('alllb'.replace(/(l*)/, 'l'));
 
-      // console.log('cross',cross('abc')('xyz'));
+      console.log('cross',cross('abc')('xyz'));
+      console.log('cross2',cross2('abc')('xyz'));
+
       // console.log('crossBin', crossBin('abc', 'xyz'));
-      console.log('crossCat',crossCat('abc')('xyz'));
-      console.log('crossCatAll',crossCatAll('abc')('xyz'));
+      // console.log('crossCat',crossCat('abc')('xyz'));
+
+      // console.log('crossCatAll',crossCatAll('abc')('xyz'));
 
       // console.log('crossCatAll',crossCatAll('a,b,c')('x,y,z,xy, xyz'));
     });

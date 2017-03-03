@@ -17,14 +17,7 @@
 
   export const append = x => y => join([ x, y, ]);
   export const appendBin = x => y => append(x)(y);
-
-  export const splat = str => c => split(str).map(cat(c)).reduce(addSetBin, str);
-  export const splatBin = (str ,chr) => splat(str)(chr);
-  export const allSplat = str => (...chrs) => chrs.reduce(splatBin, str);
   
-  export const cross = s0 => s1 => split(s0).map(splat(s1)).reduce(addSetBin, s0);
-  export const crossBin = (s0, s1) => cross(s0)(s1);
-  export const crossMany = s0 => (...strs) => strs.reduce(crossBin, s0);
   const dedupeC = c => str => (str.replace(RegExp(`${c}+`,'g'),c));
   const dedupeBin = (str,c) => {
     // console.log('DEDUPING',str,c);
@@ -37,6 +30,21 @@
   };
   const dedupe = str => charSet(str).reduce(dedupeBin, str);
   const dedupeAll = str => split(str).map(dedupe).reduce(addSetBin, str);
+  
+  export const autoSplat = str => add(str)(str);
+
+  export const splat = str => c => split(str).map(cat(c)).reduce(addSetBin, add(str)(c));
+  export const splatBin = (str ,chr) => splat(str)(chr);
+  export const allSplat = str => (...chrs) => chrs.reduce(splatBin, str);
+  
+  // export const cross2 = s0 => s1 => split(s1).reduce(splatBin, add(s0)(s1));
+
+  // export const cross2 = s0 => s1 => split(s0).map(splat(s1)).reduce(splatBin, s0);
+
+  export const cross2 = s0 => s1 => split(s1).reduce(splatBin, s0);
+  export const cross = s0 => s1 => split(s0).map(splat(s1)).reduce(addSetBin, s0);
+  export const crossBin = (s0, s1) => cross(s0)(s1);
+  export const crossMany = s0 => (...strs) => strs.reduce(crossBin, s0);
 
   export const autoCross = str => charSet(str).reduce(dedupeBin,cross(str)(str));
   export const crossCat = s0 => (s1) => {
@@ -46,13 +54,17 @@
     const a0 = autoCross(s0);
     const a1 = autoCross(s1);
 
-    console.log('dedupe',dedupeAll(cRes));
+    console.log('cross1',cross(s0)(s1));
+    console.log('cross2',cross2(s0)(s1));
+
+    // console.log('dedupe',dedupeAll(cRes));
 
     // const cRes = (splat(s0)(myCross));
 
-    console.log('addCoss',addSet(s0)(cross(s0)(s1)));
-    console.log('a0', a0);
-    console.log('a1', a1);
+    // console.log('addCoss',addSet(s0)(cross(s0)(s1)));
+
+    // console.log('a0', a0);
+    // console.log('a1', a1);
     console.log('s0',s0);
     console.log('s1',s1);
 
@@ -75,7 +87,7 @@
     // return splat(s0)(cross(s0)(s1));
 
     // console.log('corss and catmany',cross(s0)(s1).concat((crossMany(s0)(s1))));
-    return (cross(s0)(s1).concat(uniq(crossMany(s0)(s1))));
+    // return (cross(s0)(s1).concat(uniq(crossMany(s0)(s1))));
   };
   
   export const crossCatBin = (s0 ,s1) => {
