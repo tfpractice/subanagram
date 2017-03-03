@@ -5,18 +5,21 @@
   export const repCat = str => join(strSet(join([ str, repeat(2)(str), ])));
   export const reps = x => s => exceeds(x - 1)(split(s)) ? s
   : reps(x)(repCat(s));
-  
-  export const cat = c0 => c1 => c0.concat(c1);
-  export const catBin = (c0, c1) => cat(c0)(c1);
-  
-  export const add = x => y => join([ split(x),split(y), ]);
-  export const addBin = (x, y) => add(x)(y);
-  
-  export const addSet = x => y => jnSet(add(x)(y));
-  export const addSetBin = (x, y) => addSet(x)(y);
+   
+  export const cat = c1 => c0 => c0.concat(c1);
+  export const catBin = (c0, c1) => cat(c1)(c0);
 
-  export const append = x => y => join([ x, y, ]);
-  export const appendBin = (x,y) => append(x)(y);
+  export const catSet = c0 => c1 => uniq(cat(c1)(c0));
+  export const catSetBin = (c0, c1) => catSet(c1)(c0);
+  
+  export const add = y => x => join([ split(x),split(y), ]);
+  export const addBin = (x, y) => add(y)(x);
+  
+  export const addSet = y => x => jnSet(add(y)(x));
+  export const addSetBin = (x, y) => addSet(y)(x);
+
+  export const append = y => x => join([ x, y, ]);
+  export const appendBin = (x,y) => append(y)(x);
   
   const dedupeC = c => str => (str.replace(RegExp(`${c}+`,'g'),c));
   const dedupeBin = (str,c) => {

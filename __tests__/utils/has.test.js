@@ -1,5 +1,5 @@
 import 'jasmine-expect';
-import { comma, has, idx, xHas, } from 'src/utils/has';
+import { has, idx, xHas, } from 'src/utils/has';
 
 // console.log('ab,cf,dd,s,e,r'.replace(/\W/g,'_'));
 console.log('ab,cf,dd,s,d,d,e,r'.replace(/d+/g,'_'));
@@ -22,10 +22,11 @@ describe('has', () => {
       expect(idx('a')('bca')).toEqual(2);
     });
   });
-  describe('comma', () => {
-    it('checks for a comma ', () => {
-      expect(comma('a,b,c')).toBeTrue();
-      expect(comma('abc')).toBeFalse();
-    });
-  });
+
+  // describe('comma', () => {
+    // it('checks for a comma ', () => {
+      // expect(comma('a,b,c')).toBeTrue();
+      // expect(comma('abc')).toBeFalse();
+    // });
+  // });
 });

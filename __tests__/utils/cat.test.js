@@ -9,7 +9,7 @@ const xyz = 'xyz';
 describe('cat', () => {
   describe('cat', () => {
     it('concatenates a str with another', () => {
-      expect(cat('a')('b')).toEqual('ab');
+      expect(cat('b')('a')).toEqual('ab');
     });
   });
   describe('catBin', () => {
@@ -19,7 +19,7 @@ describe('cat', () => {
   });
   describe('add', () => {
     it('splits a string and then appends a split version of another string', () => {
-      expect(add(ab)(xy)).toEqual('a,b,x,y');
+      expect(add(xy)(ab)).toEqual('a,b,x,y');
     });
   });
   describe('addBin', () => {
@@ -29,7 +29,7 @@ describe('cat', () => {
   });
   describe('addSet', () => {
     it('adds a unidque string to a string', () => {
-      expect(addSet(ab)(xy)).toEqual('a,b,x,y');
+      expect(addSet(xy)(ab)).toEqual('a,b,x,y');
     });
   });
   describe('addSet', () => {
@@ -39,7 +39,7 @@ describe('cat', () => {
   });
   describe('append', () => {
     it('appends a string to another without splitting', () => {
-      expect(append(ab)(xy)).toEqual('ab,xy');
+      expect(append(xy)(ab)).toEqual('ab,xy');
     });
   });  
   describe('append', () => {
