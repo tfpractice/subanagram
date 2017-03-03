@@ -1,4 +1,4 @@
-import { comma, } from './has';
+const comma = str => new Set((str).split('')).has(',');
 
 export const lower = str => str.toLowerCase();
 
