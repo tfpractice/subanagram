@@ -1,5 +1,5 @@
 import 'jasmine-expect';
-import { add, addBin, addSet, addSetBin, append, appendBin, cat, catBin, } from 'src/utils/cat';
+import { add, addBin, addSet, addSetBin,append,appendBin, cat, catBin, catSet, catSetBin, } from 'src/utils/cat';
 
 const ab = 'ab';
 const abc = 'abc'; 
@@ -15,6 +15,16 @@ describe('cat', () => {
   describe('catBin', () => {
     it('concatenates a str with another', () => {
       expect(catBin('a', 'b')).toEqual('ab');
+    });
+  });
+  describe('catSet', () => {
+    it('concatenates a str with another', () => {
+      expect(catSet('b')('ab')).toEqual('ab');
+    });
+  });
+  describe('catSetBin', () => {
+    it('concatenates a str with another', () => {
+      expect(catSetBin('a', 'b')).toEqual('ab');
     });
   });
   describe('add', () => {

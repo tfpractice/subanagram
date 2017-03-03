@@ -1,5 +1,6 @@
   import { alpha, alphStr, chars,charSet,exceeds,jnAlpha,jnSet,join,split,strSet, uniq, } from './index';
   import { freqStr, } from './frequency';
+  import { has, } from './has';
   
   export const repeat = times => str => str.repeat(times);
   export const repCat = str => join(strSet(join([ str, repeat(2)(str), ])));
@@ -9,7 +10,7 @@
   export const cat = c1 => c0 => c0.concat(c1);
   export const catBin = (c0, c1) => cat(c1)(c0);
 
-  export const catSet = c0 => c1 => uniq(cat(c1)(c0));
+  export const catSet = c1 => c0 => has(c1)(c0) ? c0 : cat(c1)(c0);
   export const catSetBin = (c0, c1) => catSet(c1)(c0);
   
   export const add = y => x => join([ split(x),split(y), ]);
