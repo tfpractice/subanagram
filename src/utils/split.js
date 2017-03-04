@@ -15,4 +15,4 @@ export const strSet = str => [ ...new Set(split(str)), ];
 export const uniq = str => [ ...new Set(split(str)), ];
 
 export const sort = str => split(str).sort();
-export const sortSet = str => sort(strSet(str));
+export const sortSet = str => sort(uniq(str).join());

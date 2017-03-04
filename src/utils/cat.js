@@ -1,5 +1,5 @@
   import { charSet,exceeds,jnSet,join,split,strSet, uniq, } from './index';
-  import { has, } from './compare';
+  import { has,union, } from './compare';
   
   export const repeat = times => str => str.repeat(times);
   export const repCat = str => join(strSet(join([ str, repeat(2)(str), ])));
@@ -12,7 +12,7 @@
   export const catSet = c1 => c0 => has(c1)(c0) ? c0 : cat(c1)(c0);
   export const catSetBin = (c0, c1) => catSet(c1)(c0);
   
-  export const add = y => x => join([ split(x),split(y), ]);
+  export const add = y => x => join([ ...split(x),...split(y), ]);
   export const addBin = (x, y) => add(y)(x);
   
   export const addSet = y => x => jnSet(add(y)(x));
@@ -20,7 +20,12 @@
 
   export const append = y => x => join([ x, y, ]);
   export const appendBin = (x,y) => append(y)(x);
-  
+  export const appendSet = y => x => join([ ...new Set([ x, y, ]), ]);
+
+  // export const appendSet = y => x => join(uniq( append(y)(x)))
+
+  export const appendSetBin = (y, x) => join(uniq(append(y)(x)));
+
   const dedupeC = c => str => (str.replace(RegExp(`${c}+`,'g'),c));
   const dedupeBin = (str,c) => {
     // console.log('DEDUPING',str,c);
