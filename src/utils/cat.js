@@ -1,6 +1,5 @@
-  import { alpha, alphStr, chars,charSet,exceeds,jnAlpha,jnSet,join,split,strSet, uniq, } from './index';
-  import { freqStr, } from './frequency';
-  import { has, } from './has';
+  import { charSet,exceeds,jnSet,join,split,strSet, uniq, } from './index';
+  import { has, } from './compare';
   
   export const repeat = times => str => str.repeat(times);
   export const repCat = str => join(strSet(join([ str, repeat(2)(str), ])));

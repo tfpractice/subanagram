@@ -1,4 +1,4 @@
-import { catBin, chars, charSet, isEq,join,reps,split, } from './index';
+import { catBin, charSet, isEq,join,reps,split, } from './index';
 
 export const sort = str => split(str).sort();
 

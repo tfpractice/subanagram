@@ -1,5 +1,6 @@
 export * from './compare';
-export * from './has';
+
+// export * from './has';
 export * from './join';
 export * from './replace';
 export * from './size';

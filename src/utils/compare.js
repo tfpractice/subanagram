@@ -3,9 +3,9 @@ import { join, } from './join';
 
 export const isEq = a => b => b === a;
 export const xEq = a => b => b !== a;
-const has = str => chr => new Set(str).has(chr);
-const xHas = str => chr => !has(str)(chr);
-const idx = chr => str => str.indexOf(chr);
+export const has = str => chr => new Set(str).has(chr);
+export const xHas = str => chr => !has(str)(chr);
+export const idx = chr => str => str.indexOf(chr);
 const comma = str => has(str)(',');
 
 export const diff = s0 => s1 => split(s0).filter(xHas(s1));
@@ -25,3 +25,5 @@ export const unionBin = (s0 , s1) => union(s0)(s1);
 
 export const unionJoin = s0 => s1 => join(union(s0)(s1));
 export const unionJoinBin = (s0 , s1) => unionJoin(s0)(s1);
+
+export const matches = s0 => s1 => diff(s0)(s1).length === 0;
