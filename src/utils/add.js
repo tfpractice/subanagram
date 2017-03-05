@@ -10,4 +10,4 @@ export const addSet = y => x => join(uniq(add(y)(x)));
 export const addSetBin = (x, y) => addSet(y)(x);
 export const addDiff = y => x => diff(y)(x).reduce(addSetBin, x);
 export const addDiffBin = (x, y) => addDiff(y)(x);
-export const addUnion = y => x => union(x)(y).reduce(addSetBin, x);
+export const addUnion = y => x => union(y)(x).reduce(addSetBin, x);

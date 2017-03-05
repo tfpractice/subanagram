@@ -18,14 +18,16 @@ const mxyz = 'x, xy, zz';
 // console.log(addDiffBin(ab, xyz)); 
 // console.log(addDiffBin(xyz, ab));
 
-console.log('+++++++======++++++');
-
-console.log(addSetBin(ab, mxyz));
+// console.log('+++++++======++++++');
+// 
+// console.log(addSetBin(ab, mxyz));
 
 // console.log(addSetBin(mxyz, ab));
 
-console.log(addDiffBin(ab, mxyz));
-console.log('addUnion',addUnion(mxyz)(ab));
+// console.log('addDiff(ab)(mxyz)',addDiff(ab)(mxyz));
+// console.log('addDiff(mxyz)(ab)',addDiff(mxyz)(ab));
+// console.log('addUnion',addUnion(mxyz)(ab));
+// console.log('addUnion',addUnion(ab)(mxyz));
 
 // console.log(addDiffBin(mxyz, ab));
 describe('add', () => {
