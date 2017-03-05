@@ -1,7 +1,7 @@
   import { chars,charSet,cSet,exceeds,jnSet,join, split, strSet,uniq, } from './index';
-  import { diff,has,inter, union, } from './compare';
-  import { alpha, alphStr, } from './split';
-  import { cJoin,flatJoin, } from './join';
+  import { diff,union, } from './compare';
+  import { alpha, } from './split';
+  import { flatJoin, } from './join';
   export const repeat = times => str => str.repeat(times);
   export const repCat = str => join(strSet(join([ str, repeat(2)(str), ])));
   export const reps = x => s => exceeds(x - 1)(split(s)) ? s
