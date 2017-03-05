@@ -8,24 +8,15 @@
   : reps(x)(repCat(s));
    
   export const cat = c1 => c0 => flatJoin([ c0,c1, ]);
-  export const catBin = (c0, c1) => {
-    console.log('catBin',c0, c1,cat(c1)(c0));
-    return cat(c1)(c0);
-  };
+  export const catBin = (c0, c1) => cat(c1)(c0);
   
   export const catSet = c1 => c0 => flatJoin(cSet(cat(c1)(c0)));
   export const catSetBin = (c0, c1) => catSet(c1)(c0);
   
-  export const catDiff = c0 => (c1) => {
-    console.log('diff(c1)(c0)',`${c0}______${c1}\n`,diff(c1)(c0));
-    return diff(c1)(c0).reduce(catSetBin,c0); 
-  };
+  export const catDiff = c1 => c0 => diff(c1)(c0).reduce(catSetBin,c0);
   export const catDiffBin = (c0, c1) => catDiff(c1)(c0);
     
-  export const catUnion = c0 => (c1) => {
-    console.log(' union(c1)(c0)', `${c0}______${c1}\n`,union(c1)(c0));
-    return union(c1)(c0).reduce(catSetBin,c0);
-  };
+  export const catUnion = c1 => c0 => union(c1)(c0).reduce(catSetBin,c0);
   export const catUnionBin = (c0, c1) => catUnion(c1)(c0);
     
   export const add = y => x => join([ ...split(x),...split(y), ]);

@@ -20,44 +20,20 @@ describe('cat', () => {
   });
   describe('catDiff', () => {
     it('concatenates a str with itS diff another', () => {
-      console.log(catDiff('abc')('d'));
-      console.log(catDiff('abc')('xyz'));
-      console.log(catDiff('abc')(mxyz));
-      console.log(catUnion('abc')('d'));
-      console.log(catUnion('abc')('xyz'));
-      console.log(catUnion('abc')(mxyz));
+      expect(catDiff('d')('abc')).toEqual('abcd');
     });
   });
   describe('catSet', () => {
     it('concatenates a str with another', () => {
-      // expect(catSet('b')('ab')).toEqual('ab');
+      expect(catSet('b')('ab')).toEqual('ab');
     });
   });
   describe('catSetBin', () => {
     it('concatenates a str with another', () => {
-      // expect(catSetBin('a', 'b')).toEqual('ab');
+      expect(catSetBin('a', 'b')).toEqual('ab');
     });
   });
-  describe('add', () => {
-    it('splits a string and then appends a split version of another string', () => {
-      expect(add(xy)(ab)).toEqual('a,b,x,y');
-    });
-  });
-  describe('addBin', () => {
-    it('splits a string and then appends a split version of another string', () => {
-      expect(addBin(ab, xy)).toEqual('a,b,x,y');
-    });
-  });
-  describe('addSet', () => {
-    it('adds a unidque string to a string', () => {
-      expect(addSet(xy)(ab)).toEqual('a,b,x,y');
-    });
-  });
-  describe('addSet', () => {
-    it('adds a unidque string to a string', () => {
-      expect(addSetBin(ab, xy)).toEqual('a,b,x,y');
-    });
-  });
+
   describe('append', () => {
     it('appends a string to another without splitting', () => {
       expect(append(xy)(ab)).toEqual('ab,xy');
