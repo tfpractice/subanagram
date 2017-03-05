@@ -12,3 +12,4 @@ export const appendDiff = y => x => diff(y)(x).reduce(appendSetBin, x);
 export const appendDiffBin = (x, y) => appendDiff(y)(x);
 
 export const appendUnion = y => x => join(uniq(append(union(x)(y))(x)));
+export const appendUnionBin = (x, y) => appendUnion(y)(x);

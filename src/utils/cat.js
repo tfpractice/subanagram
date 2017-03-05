@@ -7,7 +7,7 @@
   export const reps = x => s => exceeds(x - 1)(split(s)) ? s
   : reps(x)(repCat(s));
    
-  export const cat = c1 => c0 => flatJoin([ c0,c1, ]);
+  export const cat = c1 => c0 => flatJoin([ ...chars(c0),...chars(c1), ]);
   export const catBin = (c0, c1) => cat(c1)(c0);
   
   export const catSet = c1 => c0 => flatJoin(cSet(cat(c1)(c0)));
