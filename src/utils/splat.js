@@ -9,7 +9,7 @@ export const splat = str => c => join(split(str).map(cat(c)));
 export const splatBin = (str,c) => splat(str)(c);
 
 export const splatSet = str => c => join(split(str).map(catSet(c)));
-export const splatSetBin = (str,c) => splat(str)(c);
+export const splatSetBin = (str,c) => splatSet(str)(c);
 
 export const addSplat = y => x => add(splat(x)(y))(x);
 export const addSplatBin = (x,y) => addSplat(y)(x);
