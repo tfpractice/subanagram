@@ -8,6 +8,9 @@ export const appendBin = (x, y) => append(y)(x);
 
 export const appendSet = y => x => join(uniq(append(y)(x)));
 export const appendSetBin = (x, y) => appendSet(y)(x);
+
+export const appSelf = x => appendSet(uniq(x))(x);
+
 export const appendDiff = y => x => diff(y)(x).reduce(appendSetBin, x);
 export const appendDiffBin = (x, y) => appendDiff(y)(x);
 

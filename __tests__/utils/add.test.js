@@ -7,29 +7,6 @@ const xy = 'xy';
 const xyz = 'xyz'; 
 const mxyz = 'x, xy, zz';
 
-// console.log((add(xy)(abc)));
-
-// console.log((addBin(ab, xy)));
-// console.log((addSet(mxyz)(ab)));
-
-// console.log((addSetBin(ab, mxyz)));
-// console.log(addSetBin(ab, xyz));
-// console.log(addSetBin(xyz,ab));
-// console.log(addDiffBin(ab, xyz)); 
-// console.log(addDiffBin(xyz, ab));
-
-// console.log('+++++++======++++++');
-// 
-// console.log(addSetBin(ab, mxyz));
-
-// console.log(addSetBin(mxyz, ab));
-
-// console.log('addDiff(ab)(mxyz)',addDiff(ab)(mxyz));
-// console.log('addDiff(mxyz)(ab)',addDiff(mxyz)(ab));
-// console.log('addUnion',addUnion(mxyz)(ab));
-// console.log('addUnion',addUnion(ab)(mxyz));
-
-// console.log(addDiffBin(mxyz, ab));
 describe('add', () => {
   describe('add', () => {
     it('splits a string and then appends a split version of another string', () => {
