@@ -1,5 +1,6 @@
 import 'jasmine-expect';
 import { autoCross,cross,crossBin,crossSet,crossSetBin,permute, } from 'src/utils/cross';
+import { split, } from 'src/utils/split';
 
 // import { copy, copyBin, copyCat, } from 'src/utils/copy';
 
@@ -11,9 +12,15 @@ const mxyz = 'x,y,xy,zz';
 
 // console.log(cross(ab)(mxyz));
 // console.log(autoCross(abc));
-console.log(permute(ab)(mxyz));
+// console.log(permute(ab)(mxyz));
 console.log(permute(ab)(xyz));
-console.log(permute('ab,c')('xyz'));
+
+// console.log(permute('x')('yy,s'));
+console.log(permute('x')('u'));
+console.log(permute('isolated')('isolated'));
+console.log(new Set(split(permute('isolated')('isolated')).map(s => split(s).sort().join(''))));
+
+// console.log(permute('ab,c')('xyz'));
 describe('cross', () => {
   describe('cross', () => {
     it('maps each characted to a splat', () => {
@@ -28,14 +35,12 @@ describe('cross', () => {
   });
   describe('crossSet', () => {
     it('maps each characted to a splat', () => {
-      console.log(crossSet(ab)('xy,yba'));
       expect(crossSet(ab)(xy)).toEqual('ax,bx,ay,by');
     });
   });
   
   describe('crossSetBin', () => {
     it('maps each characted to a splat', () => {
-      console.log(crossSetBin(ab,xy));
       expect(crossSetBin(ab,xy)).toEqual('ax,bx,ay,by');
     });
   });

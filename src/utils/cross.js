@@ -12,14 +12,7 @@ export const crossSetBin = (s0, s1) => crossSet(s0)(s1);
 export const crossUnionBin = (s0, s1) => union(s0)(s1).reduce(crossSetBin,s0);
 export const autoCross = str => crossSet(str)(str);
 
-export const permute = s0 => (s1) => {
-  console.log([ s0, s1, ].map(autoCross).reduce(crossSetBin, s0));
-  console.log('permute',split(cross(s0)(s1)).reduce(unionJoinBin, s0));
-
-  // console.log('crossUnionBin',crossUnionBin(s0,s1));
-  console.log('splat',splat(s0)(s1));
-  console.log('cross',cross(s0)(s1));
-  console.log('autoCross',autoCross(s0));
-  console.log('autoCross(s0).map',split(autoCross(s0)).map(splatSet(s1)));
-  return appendSet([ s0, s1, ].map(autoCross).reduce(crossSetBin, s0))(union(s1)(s0)); 
-};
+export const permute = s0 => s1 =>
+ appendSet([ s0, s1, ]
+   .map(autoCross)
+   .reduce(crossSetBin, s0))(union(s1)(s0));
